@@ -1,0 +1,211 @@
+/* NEXORA CORE STYLES
+Modern Digital Aesthetics & Glassmorphism
+*/
+
+@import url('https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DPlus%2BJakarta%2BSans:wght%40300%3B400%3B500%3B600%3B700%3B800%26display%3Dswap');
+
+/* Dasar & Tipografi */
+body {
+margin: 0;
+overflow-x: hidden;
+font-family: 'Plus Jakarta Sans', sans-serif;
+background-color: #050505;
+color: white;
+-webkit-font-smoothing: antialiased;
+}
+
+/* Latar Belakang 3D Canvas (Three.js) */
+#canvas-container {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 0;
+pointer-events: none;
+}
+
+/* Layer Konten Utama */
+.content-layer {
+position: relative;
+z-index: 10;
+}
+
+/* Efek Glassmorphism Card */
+.glass-card {
+background: rgba(255, 255, 255, 0.03);
+backdrop-filter: blur(12px);
+border: 1px solid rgba(255, 255, 255, 0.08);
+border-radius: 20px;
+}
+
+/* Container Video (Ratio 16:9) */
+.video-container {
+position: relative;
+width: 100%;
+aspect-ratio: 16 / 9;
+background: #000;
+overflow: hidden;
+border-radius: 12px;
+box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+/* Teks Gradasi Nexora */
+.gradient-text {
+background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+/* Tombol Navigasi Kustom */
+.nav-btn {
+background: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(255, 255, 255, 0.1);
+padding: 7px 16px;
+border-radius: 99px;
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+font-size: 0.75rem;
+font-weight: 500;
+display: flex;
+align-items: center;
+gap: 6px;
+white-space: nowrap;
+color: white;
+cursor: pointer;
+}
+
+.nav-btn:hover, .nav-btn.active {
+background: rgba(79, 172, 254, 0.15);
+border-color: rgba(79, 172, 254, 0.5);
+color: #4facfe;
+transform: translateY(-1px);
+}
+
+/* Menu Dropdown Kontak */
+.dropdown-menu {
+position: absolute;
+top: calc(100% + 12px);
+right: 0;
+min-width: 180px;
+background: rgba(10, 10, 10, 0.95);
+backdrop-filter: blur(20px);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 14px;
+padding: 8px;
+display: flex;
+flex-direction: column;
+gap: 4px;
+opacity: 0;
+transform: translateY(10px);
+pointer-events: none;
+transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+}
+
+.dropdown-menu.active {
+opacity: 1;
+transform: translateY(0);
+pointer-events: auto;
+}
+
+.dropdown-item {
+display: flex;
+align-items: center;
+gap: 12px;
+padding: 10px 14px;
+border-radius: 10px;
+font-size: 0.8rem;
+transition: all 0.2s ease;
+text-align: left;
+width: 100%;
+color: rgba(255, 255, 255, 0.7);
+text-decoration: none;
+}
+
+.dropdown-item:hover {
+background: rgba(255, 255, 255, 0.08);
+color: #ffffff;
+}
+
+/* Animasi Perpindahan Halaman */
+.page-section {
+display: none;
+animation: slideUpFade 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.page-section.active {
+display: block;
+}
+
+@keyframes slideUpFade {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+/* Kartu Profil Anggota Tim */
+.member-card {
+background: rgba(255, 255, 255, 0.04);
+border: 1px solid rgba(255, 255, 255, 0.08);
+border-radius: 18px;
+padding: 28px;
+text-align: center;
+transition: all 0.4s ease;
+}
+
+.member-card:hover {
+transform: translateY(-8px);
+background: rgba(255, 255, 255, 0.07);
+border-color: rgba(79, 172, 254, 0.4);
+box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.profile-img {
+width: 80px;
+height: 80px;
+border-radius: 50%;
+object-fit: cover;
+border: 2px solid rgba(79, 172, 254, 0.4);
+margin-bottom: 16px;
+background: #111;
+box-shadow: 0 0 20px rgba(79, 172, 254, 0.2);
+}
+
+/* Pengaturan Responsif untuk Mobile */
+@media (max-width: 640px) {
+.mobile-nav-scroll {
+overflow-x: auto;
+mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+-webkit-overflow-scrolling: touch;
+padding-bottom: 5px;
+}
+
+.mobile-nav-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-btn {
+    font-size: 0.7rem;
+    padding: 6px 14px;
+}
+
+
+}
+
+/* Efek Kustom Area Unggah Video */
+.custom-file-upload {
+cursor: pointer;
+transition: all 0.3s ease;
+border: 2px dashed rgba(255, 255, 255, 0.15);
+}
+
+.custom-file-upload:hover {
+border-color: #4facfe;
+background: rgba(79, 172, 254, 0.05);
+}
